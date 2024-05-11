@@ -5,6 +5,8 @@
         <title>{% block title %}Barn & Bake: Yum for your Puppers!{% endblock %}</title>
         <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+        {{ include('@NetgenLayoutsStandard/page_head.html.twig', { full: true }) }}
+        {{ include('@NetgenLayouts/page_head.html.twig') }}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -15,8 +17,8 @@
     </head>
 
     <body>
-    {# {% block layout %} #}
-        {# {% block navigation %} #}
+    {% block layout %}
+        {% block navigation %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="{{ path('app_homepage')}}">
                 <img src="{{ asset('images/B-B-logo.png') }}" width="30" height="30" alt="bark and bake logo">
@@ -34,7 +36,7 @@
                         <a class="nav-link" href="{{ path('app_recipes') }}">All Recipes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">All Skills</a>
+                        <a class="nav-link" href="{{ path('app_skills') }}">All Skills</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -45,13 +47,11 @@
                 </form>
             </div>
         </nav>
-        {# {% endblock %} #}
+        {% endblock %}
 
-        {# {% block layout %} #}
         {% block body %}{% endblock %}
-        {# {% endblock %} #}
 
-        {# {% block footer %} #}
+        {% block footer %}
         <div class="container mt-5">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
                 <div class="col-md-6 d-flex align-items-center">
@@ -64,7 +64,7 @@
                 </div>
             </footer>
         </div>
-        {# {% endblock %} #}
-        {# {% endblock %} #}
+        {% endblock %}
+    {% endblock %}
     </body>
 </html>
