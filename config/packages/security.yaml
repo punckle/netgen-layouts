@@ -5,8 +5,8 @@ security:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
 
     role_hierarchy:
-        # ROLE_ADMIN: [ROLE_USER]
-        ROLE_ADMIN: [ROLE_USER, ROLE_NGLAYOUTS_ADMIN]
+        ROLE_ADMIN: [ROLE_USER]
+        # ROLE_ADMIN: [ROLE_USER, ROLE_NGLAYOUTS_ADMIN]
 
     providers:
         # used to reload user from session & other features (e.g. switch_user)

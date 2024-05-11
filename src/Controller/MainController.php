@@ -21,4 +21,10 @@ class MainController extends AbstractController
             'latestRecipes' => $latestRecipes,
         ]);
     }
+
+    #[Route('/skills', name: 'app_skills')]
+    public function skills(): Response
+    {
+        return $this->render('main/skills.html.twig');
+    }
 }
